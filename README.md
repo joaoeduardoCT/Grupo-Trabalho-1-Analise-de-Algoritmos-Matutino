@@ -1,5 +1,3 @@
-Grupo:
+Grupo: 
 
-João Eduardo Cappellari Trevisol
-Marcelli Rita Harbs
-Matheus Ohrt
+João Eduardo Cappellari Trevisol, Marcelli Rita Harbs, Matheus Ohrt.
