@@ -10,14 +10,7 @@ public class Acao {
     public Acao(String nome, float valor) {
         this.nome = nome;
         this.valor = valor;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
+        listaOrdens =  new ArrayList<>();
     }
 
     public float getValor() {
@@ -32,24 +25,42 @@ public class Acao {
         return listaOrdens;
     }
 
-    public void setListadeOrdens(ArrayList<Ordem> listaOrdens) {
-        this.listaOrdens = listaOrdens;
-    }
-
     public void registrarOrdem(Ordem ordem){
         listaOrdens.add(ordem);
     }
 
-    private void match(){
-        for(Ordem ordem1 : listaOrdens){
-            for(Ordem ordem2: listaOrdens){
-                if (ordem1.getTipoOrdem() != ordem2.getTipoOrdem() && ordem1.getValorOrdem() == ordem2.getValorOrdem()){
-                    setValor((valor - ordem1.getValorOrdem()));
-                    listaOrdens.remove(ordem1);
-                    listaOrdens.remove(ordem2);
-                    break;
+    public void match() {
+        ArrayList<Ordem> ordensParaRemover = new ArrayList<>();
+
+        for (int i = 0; i < listaOrdens.size(); i++) {
+            Ordem ordem1 = listaOrdens.get(i);
+
+            for (int j = i + 1; j < listaOrdens.size(); j++) {
+                Ordem ordem2 = listaOrdens.get(j);
+
+                if (ordem1.getTipoOrdem() != ordem2.getTipoOrdem() && ordem1.getValorOrdem() == ordem2.getValorOrdem()) {
+                    setValor(ordem1.getValorOrdem());
+                    ordensParaRemover.add(ordem1);
+                    ordensParaRemover.add(ordem2);
+                    break; // Sai do loop interno após encontrar um match
                 }
             }
+        }
+
+        // Removendo as ordens encontradas fora do loop de iteração
+        listaOrdens.removeAll(ordensParaRemover);
+    }
+
+
+    public String registrarAlertaTempoReal(){
+        return "Valor da ação mudou: " + getValor();
+    }
+
+    public void programarOrdem(float valorLimite, Investidor investidor, TipoOrdem tipoOrdem, float valorOrdem){
+        Ordem ordem = new Ordem(valorOrdem, tipoOrdem, investidor);
+
+        if (getValor() == valorLimite){
+            registrarOrdem(ordem);
         }
     }
 
