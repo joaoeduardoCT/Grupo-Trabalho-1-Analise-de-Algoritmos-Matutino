@@ -42,12 +42,11 @@ public class Acao {
                     setValor(ordem1.getValorOrdem());
                     ordensParaRemover.add(ordem1);
                     ordensParaRemover.add(ordem2);
-                    break; // Sai do loop interno após encontrar um match
+                    break;
                 }
             }
         }
 
-        // Removendo as ordens encontradas fora do loop de iteração
         listaOrdens.removeAll(ordensParaRemover);
     }
 
