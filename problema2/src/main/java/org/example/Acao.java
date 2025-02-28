@@ -27,7 +27,18 @@ public class Acao {
 
     public void registrarOrdem(Ordem ordem){
         listaOrdens.add(ordem);
+        setValor(calcularTotalAcao());
     }
+
+    private float calcularTotalAcao(){
+        float valorTotal = 0;
+
+        for(Ordem ordem: listaOrdens){
+            valorTotal += ordem.getValorOrdem();
+        }
+        return valorTotal;
+    }
+
 
     public void match() {
         ArrayList<Ordem> ordensParaRemover = new ArrayList<>();
@@ -39,14 +50,12 @@ public class Acao {
                 Ordem ordem2 = listaOrdens.get(j);
 
                 if (ordem1.getTipoOrdem() != ordem2.getTipoOrdem() && ordem1.getValorOrdem() == ordem2.getValorOrdem()) {
-                    setValor(ordem1.getValorOrdem());
                     ordensParaRemover.add(ordem1);
                     ordensParaRemover.add(ordem2);
                     break;
                 }
             }
         }
-
         listaOrdens.removeAll(ordensParaRemover);
     }
 
@@ -58,10 +67,9 @@ public class Acao {
     public void programarOrdem(float valorLimite, Investidor investidor, TipoOrdem tipoOrdem, float valorOrdem){
         Ordem ordem = new Ordem(valorOrdem, tipoOrdem, investidor);
 
-        if (getValor() == valorLimite){
+        if (getValor() >= valorLimite){
             registrarOrdem(ordem);
         }
     }
-
 
 }
