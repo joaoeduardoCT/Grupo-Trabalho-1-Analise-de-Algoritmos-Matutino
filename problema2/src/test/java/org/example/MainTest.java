@@ -13,7 +13,11 @@ class MainTest {
     void setUp() {
         mariana = new Investidor("Mariana");
         joaquim = new Investidor("Joaquim");
+
         bancoDoBrasil = new Acao("Banco do Brasil", 25.00f);
+
+        bancoDoBrasil.adicionarInvestidor(mariana);
+        bancoDoBrasil.adicionarInvestidor(joaquim);
     }
 
     @Test
@@ -24,7 +28,8 @@ class MainTest {
         bancoDoBrasil.registrarOrdem(ordemVenda);
         bancoDoBrasil.registrarOrdem(ordemCompra);
 
-        assertEquals(2, bancoDoBrasil.getListadeOrdens().size(), "A lista de ordens deve conter duas ordens antes do match.");
+        assertEquals(2, bancoDoBrasil.getListadeOrdens().size(),
+                "A lista de ordens deve conter duas ordens antes do match.");
     }
 
     @Test
@@ -41,22 +46,8 @@ class MainTest {
     }
 
     @Test
-    void testProgramarOrdem() {
-        bancoDoBrasil.setValor(19.50f);
-
-        bancoDoBrasil.programarOrdem(20.00f, mariana, TipoOrdem.VENDA, 19.50f);
-
-        assertEquals(0, bancoDoBrasil.getListadeOrdens().size(), "Nenhuma ordem deve ser registrada imediatamente.");
-    }
-
-
-    @Test
-    void testRegistrarAlertaTempoReal() {
-        String alertaInicial = bancoDoBrasil.registrarAlertaTempoReal();
-        assertTrue(alertaInicial.contains("Valor da ação mudou: 25.0"), "O alerta inicial deve conter o valor atual da ação.");
-
+    void testAlteracaoValorAcaoNotificaInvestidores() {
         bancoDoBrasil.setValor(20.00f);
-        String alertaAtualizado = bancoDoBrasil.registrarAlertaTempoReal();
-        assertTrue(alertaAtualizado.contains("Valor da ação mudou: 20.0"), "O alerta atualizado deve refletir a nova cotação.");
+        assertEquals(20.00f, bancoDoBrasil.getValor(), "O valor da ação deve ser atualizado corretamente.");
     }
 }

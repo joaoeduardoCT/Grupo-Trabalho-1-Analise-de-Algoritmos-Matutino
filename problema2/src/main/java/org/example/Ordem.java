@@ -18,4 +18,20 @@ public class Ordem {
     public float getValorOrdem() {
         return valorOrdem;
     }
+
+    public Investidor getInvestidor() {
+        return investidor;
+    }
+
+    public void setInvestidor(Investidor investidor) {
+        this.investidor = investidor;
+    }
+
+    public void setTipoOrdem(TipoOrdem tipoOrdem) {
+        this.tipoOrdem = tipoOrdem;
+    }
+
+    public void setValorOrdem(float valorOrdem) {
+        this.valorOrdem = valorOrdem;
+    }
 }
