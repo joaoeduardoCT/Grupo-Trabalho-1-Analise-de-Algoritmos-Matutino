@@ -1,0 +1,60 @@
+-------------------------------------------------------------------------------
+Test set: EletrodomesticosTest
+-------------------------------------------------------------------------------
+Tests run: 16, Failures: 14, Errors: 0, Skipped: 0, Time elapsed: 0.064 s <<< FAILURE! - in EletrodomesticosTest
+EletrodomesticosTest.testModoTrabalhoPersiana  Time elapsed: 0.024 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Modo Trabalho ativado: Persiana aberta.> but was: <Modo Trabalho ativado: Palheta NatLight aberta.>
+	at EletrodomesticosTest.testModoTrabalhoPersiana(EletrodomesticosTest.java:84)
+
+EletrodomesticosTest.testVerificarEstadoPalhetaNatLight  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Palheta da persiana NatLight estÃ¡ fechada.> but was: <Palheta da persiana NatLight estÃ¡ aberta>
+	at EletrodomesticosTest.testVerificarEstadoPalhetaNatLight(EletrodomesticosTest.java:72)
+
+EletrodomesticosTest.testDesligarArCondicionado  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Ar-condicionado GellaKaza desligado.> but was: <Ambos os ares-condicionados foram desligados.>
+	at EletrodomesticosTest.testDesligarArCondicionado(EletrodomesticosTest.java:98)
+
+EletrodomesticosTest.testAbrirPalhetaNatLight  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Palheta da persiana NatLight aberta.> but was: <Palheta da persiana NatLight aberta>
+	at EletrodomesticosTest.testAbrirPalhetaNatLight(EletrodomesticosTest.java:60)
+
+EletrodomesticosTest.testLigarArCondicionado  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Ar-condicionado GellaKaza ligado.> but was: <Ambos os ares-condicionados foram ligados.>
+	at EletrodomesticosTest.testLigarArCondicionado(EletrodomesticosTest.java:91)
+
+EletrodomesticosTest.testDiminuirTemperaturaGellaKaza  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Temperatura do ar-condicionado GellaKaza diminuÃ­da.> but was: <Temperatura do GellaKaza diminuÃ­da para: 27>
+	at EletrodomesticosTest.testDiminuirTemperaturaGellaKaza(EletrodomesticosTest.java:110)
+
+EletrodomesticosTest.testModoSonoPersiana  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Modo Sono ativado: Persiana fechada.> but was: <Modo Sono ativado: Persiana Solarius fechada.>
+	at EletrodomesticosTest.testModoSonoPersiana(EletrodomesticosTest.java:78)
+
+EletrodomesticosTest.testDesligarPhellipes  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <LÃ¢mpada Phellipes desligada.> but was: <LÃ¢mpada Phellipes desligada>
+	at EletrodomesticosTest.testDesligarPhellipes(EletrodomesticosTest.java:35)
+
+EletrodomesticosTest.testModoSonoLampada  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Modo Sono ativado: LÃ¢mpada desligada.> but was: <Modo Sono ativado: LÃ¢mpada Phellipes desligada.>
+	at EletrodomesticosTest.testModoSonoLampada(EletrodomesticosTest.java:47)
+
+EletrodomesticosTest.testAumentarTemperaturaGellaKaza  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Temperatura do ar-condicionado GellaKaza aumentada.> but was: <Temperatura do GellaKaza aumentada para: 29>
+	at EletrodomesticosTest.testAumentarTemperaturaGellaKaza(EletrodomesticosTest.java:104)
+
+EletrodomesticosTest.testDefinirIntensidadePhellipes  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Intensidade da lÃ¢mpada Phellipes ajustada para 75%.> but was: <Intensidade da lÃ¢mpada Phellipes definida para 75>
+	at EletrodomesticosTest.testDefinirIntensidadePhellipes(EletrodomesticosTest.java:41)
+
+EletrodomesticosTest.testModoTrabalhoLampada  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Modo Trabalho ativado: LÃ¢mpada ligada com intensidade 100%.> but was: <Modo Trabalho ativado: LÃ¢mpada Phellipes ligada com intensidade 100%.>
+	at EletrodomesticosTest.testModoTrabalhoLampada(EletrodomesticosTest.java:53)
+
+EletrodomesticosTest.testLigarPhellipes  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <LÃ¢mpada Phellipes ligada.> but was: <LÃ¢mpada Phellipes ligada>
+	at EletrodomesticosTest.testLigarPhellipes(EletrodomesticosTest.java:28)
+
+EletrodomesticosTest.testFecharPalhetaNatLight  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Palheta da persiana NatLight fechada.> but was: <Palheta não pode ser fechada com a persiana erguida>
+	at EletrodomesticosTest.testFecharPalhetaNatLight(EletrodomesticosTest.java:66)
+
